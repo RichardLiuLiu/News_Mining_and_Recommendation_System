@@ -1,0 +1,4 @@
+{
+    "mongodb_uri": "mongodb://richard:richard@ds259778.mlab.com:59778/user-info",
+    "jwtSecret": "Im secret!"
+}
