@@ -1,1 +1,1 @@
-# News-Mining-and-Recommendation-System
+# News Mining and Recommendation System
