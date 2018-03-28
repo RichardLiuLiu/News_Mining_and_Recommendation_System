@@ -54,11 +54,20 @@ def getNewsSummariesForUser(user_id, page_num):
 
         sliced_news = total_news[begin_index : end_index]
     
+    # Get preference for the user.
+    preference = recommendation_service_client.getPreferenceForUser(user_id)
+    topPrefence = None
+
+    if preference is not None and len(preference) > 0:
+        topPrefence = preference[0]
+
     for news in sliced_news:
         del news['text']
         if news['publishedAt'].date() == datetime.today().date():
             news['time'] = 'today'
-    
+        if news['class'] == topPrefence:
+            news['reason'] = "Recommend"
+
     return json.loads(dumps(sliced_news))
 
 

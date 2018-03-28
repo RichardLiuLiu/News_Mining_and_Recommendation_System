@@ -23,7 +23,6 @@ def getPreferenceForUser(user_id):
     if model is None:
         return []
 
-
     sorted_tuples = sorted(list(model['preference'].items()), key=operator.itemgetter(1), reverse=True)
     sorted_list = [x[0] for x in sorted_tuples]
     sorted_value_list = [x[1] for x in sorted_tuples]
